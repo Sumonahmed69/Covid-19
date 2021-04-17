@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../images/image-asset.png'
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
         <nav style={{ backgroundColor: '#128C7E' }} class="fixed-top  navbar navbar-expand-lg navbar-light  ">
             <div class="container-fluid">
@@ -16,21 +19,29 @@ const Navbar = () => {
                             <Link id='home' class="nav-link ms-5 text-white " aria-current="page" to="/home">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link ms-5 text-white" to="/Services">Services</Link>
+                            <Link class="nav-link ms-4 text-white" to="/Services">Services</Link>
                         </li>
 
                         <li class="nav-item">
-                            <Link class="nav-link ms-5 text-white" to="/blog">Blog</Link>
+                            <Link class="nav-link ms-4 text-white" to="/blog">Blog</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link ms-5 text-white" to="/dashboard">Dashboard </Link>
+                            <Link class="nav-link ms-4 text-white" to="/dashboard">Dashboard </Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link ms-5 text-white" to="/admin">Admin</Link>
+                            <Link class="nav-link ms-4 text-white" to="/admin">Admin</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link ms-5 text-white bg-dark rounded" to="/login">LOGIN</Link>
+
+
+                            <Link class="nav-link ms-4 text-white bg-dark rounded" to="/login">LOGIN</Link>
                         </li>
+                        <li class="nav-item mt-1 mx-2">
+
+                            <img style={{ height: '30px', borderRadius: '30px' }} src={loggedInUser.photoURL} alt="" />
+                        </li>
+
+
 
 
 
