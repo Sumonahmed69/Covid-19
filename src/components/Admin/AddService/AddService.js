@@ -2,18 +2,21 @@ import React, { useState } from 'react';
 import SidebarAdmin from '../SidebarAdmin/SidebarAdmin';
 
 const AddService = () => {
+    
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
 
 
     const handleSubmit = (data) => {
+        
+        
         const formData = new FormData()
         console.log(info);
         formData.append('file', file);
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('http://localhost:5000/addAService', {
+        fetch('https://murmuring-coast-49984.herokuapp.com/addAService', {
             method: 'POST',
             body: formData
         })

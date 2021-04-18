@@ -27,7 +27,7 @@ const [loggedInUser, setLoggedInUser] = useState({})
   return (
     <UserContext.Provider value={[ loggedInUser, setLoggedInUser]}>
        
-    <Router>
+    <Router >
     
       <Switch>
 
@@ -37,30 +37,30 @@ const [loggedInUser, setLoggedInUser] = useState({})
         <Route path="/home">
           <Home />
         </Route>
-        <PrivateRoute path="/appointment">
+        <Route path="/appointment">
           <Appointment />
-        </PrivateRoute>
+        </Route>
         <Route path="/services">
           <Services />
         </Route>
         <Route path="/blog">
           <Blog />
         </Route>      
-        <PrivateRoute path="/Dashboard">
+        <Route path="/Dashboard">
           <Dashboard />
-        </PrivateRoute>      
+        </Route>      
         <PrivateRoute path="/admin">
           <Admin />
         </PrivateRoute>      
-        <PrivateRoute path="/oderlist">
+        <Route path="/oderlist">
           <Oderlist />
-        </PrivateRoute>      
-        <PrivateRoute path="/makeAdmin">
+        </Route>      
+        <Route path="/makeAdmin">
           <MakeAdmin />
-        </PrivateRoute>      
-        <PrivateRoute path="/addService">
+        </Route>      
+        <Route path="/addService">
           <AddService />
-        </PrivateRoute>      
+        </Route>      
         <Route path="/login">
           <Login />
         </Route>

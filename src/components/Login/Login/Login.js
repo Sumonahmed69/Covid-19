@@ -23,6 +23,7 @@ const Login = () => {
     const { from } = location.state || { from: { pathname: "/" } };
 
     const handleGoogleSignIn = () => {
+        
         const provider = new firebase.auth.GoogleAuthProvider();
 
         firebase.auth()
@@ -52,7 +53,7 @@ const Login = () => {
         <section className='d-flex justify-content-center bg-colors'>
 
             <div style={{ backgroundColor: '#128c7e' }} className="w-50 d-flex align-items-center  card mt-5 text-center p-5">
-                
+                <h4>{loggedInUser.name}</h4>
                 <img className='img-fluid my-3' style={{ height: '60px' }} src={logo} alt="" />
                 <h3 className=''>Login With</h3>
                 <button onClick={handleGoogleSignIn} className='px-5 py-1 mx-5 mt-5 mb-2 rounded-pill bg-light border border-success' > <img className='mx-2' style={{ height: '30px' }} src={icon} alt="" /> continue whith Google</button>

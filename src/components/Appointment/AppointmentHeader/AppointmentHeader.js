@@ -2,7 +2,6 @@
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import appointmentIMG from '../../../images/appointment-booking.jpg';
 import PaymentGetway from '../PaymentGetway/PaymentGetway';
 
 const AppointmentHeader = ({ handleDateChange }) => {
