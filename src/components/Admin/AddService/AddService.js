@@ -7,7 +7,9 @@ const AddService = () => {
     const [file, setFile] = useState(null);
 
 
-    const handleSubmit = (data) => {
+    const handleSubmit = (e, data) => {
+
+        e.preventDefault();
         
         
         const formData = new FormData()
